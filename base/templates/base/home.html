@@ -1,0 +1,114 @@
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adeleke Abimbola</title>
+  <link rel="stylesheet" href="{% static '/css/main.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-mid-3">
+        <div class="card card-body" id="profile-wrapper"><img id="profile-pic" src="{% static 'images/resume.png' %}" alt="image">
+          <br>
+          <h3>Hi, I'm Adeleke and I'm a Python Developer</h3></div>
+      </div>
+      <div class="col-mid-9">
+        <div class="card card-body"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur pariatur id dignissimos cum porro perferendis, consequatur recusandae, quo veniam nesciunt eligendi labore minus reprehenderit suscipit officiis. Fuga nostrum porro sed.</p></div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-mid-6">
+        <div class="card card-body">
+          <h3>Education</h3>
+          <br>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse rerum temporibus alias expedita quis perferendis accusamus, ex accusantium sed et veniam dicta quasi natus eum dolor ea minus autem velit.</p>
+        </div>
+      </div>
+      <div class="col-mid-6">
+        <div class="card card-body">
+          <h3>Work Experience</h3>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, laborum porro asperiores consequatur quibusdam incidunt nulla odit, qui harum obcaecati officiis deleniti doloremque quisquam. Voluptatem veritatis alias voluptas aliquam quae.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-mid-6">
+        <div class="card card-body">
+          <h3>Refrence</h3>
+          <br>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed nihil assumenda necessitatibus porro cupiditate illum nesciunt quae nostrum alias enim iure fugit quis, quasi dolores eum ipsam quibusdam. Fugit.</p>
+        </div>
+      </div>
+      <br>
+      <div class="col-mid-6">
+        <div class="card card-body">
+
+        {% load crispy_forms_tags %}
+
+        {% block content %}
+              <form method="post">
+                {% csrf_token %}
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Email</label>
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Password</label>
+                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">City</label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">State</label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputZip">Zip</label>
+                      <input type="text" class="form-control" id="inputZip">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        Check me out
+                      </label>
+                    </div>
+                  </div>
+                
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </form>
+        {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</body>
+</html>
